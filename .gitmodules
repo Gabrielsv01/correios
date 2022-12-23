@@ -1,4 +1,0 @@
-[submodule "correios-build"]
-	path = correios-build
-	url = https://github.com/Gabrielsv01/correios-build.git
-	branch = main

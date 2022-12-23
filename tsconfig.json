@@ -8,14 +8,14 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": false,
+    "isolatedModules": true,
     "noEmit": true,
+    "sourceMap": true,
     "jsx": "react-jsx",
-    // ? Babel Plugin Module Resolver
+    "noFallthroughCasesInSwitch": true,
     "baseUrl": "./src",
     "paths": {
       "@shared-components/*": ["./shared/components/*"],
@@ -25,7 +25,6 @@
       "@localization": ["./shared/localization"],
       "@services/*": ["./services/*"],
       "@screens/*": ["./screens/*"],
-      "@screens": ["./screens/"],
       "@shared": ["./shared/"],
       "@shared/*": ["./shared/*"],
       "@assets": ["./assets/"],
@@ -45,6 +44,9 @@
       "@routes/": ["./routes/"]
     }
   },
+  "include": [
+    "src"
+  ],
   "exclude": [
     "node_modules",
     "babel.config.js",

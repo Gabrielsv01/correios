@@ -23,17 +23,15 @@ module.exports = {
     'prettier',
     'react-hooks',
     '@typescript-eslint',
-    'promise',
     'unused-imports',
     'eslint-plugin-import-helpers',
   ],
-  env: {
-    browser: true,
-    es2021: true,
-  },
   settings: {
     'import/resolver': {
-      typescript: {},
+      typescript: {
+        alwaysTryTypes: true,
+        project: './tsconfig.json',
+      },
       node: {
         extensions: [
           '.js',
@@ -58,14 +56,13 @@ module.exports = {
     },
   },
   rules: {
-    'arrow-body-style': 'off',
-    'prefer-arrow-callback': 'off',
     'import-helpers/order-imports': [
       'warn',
       {
         groups: [
           '/^react+$/',
           ['/^react-?/', 'module'],
+          '/@gympass/',
           '/^(@shared|@services|@routes|@assets|@screens|@context|@theme)/?.*/',
           ['parent', 'sibling'],
           '/types/',
@@ -95,7 +92,6 @@ module.exports = {
         constant: 'always',
       },
     ],
-    'react-hooks/exhaustive-deps': ['warn', {additionalHooks: '(useMemoOne)'}],
     'react/function-component-definition': [
       2,
       {namedComponents: 'arrow-function'},
@@ -123,6 +119,7 @@ module.exports = {
     'import/no-deprecated': 0,
     '@typescript-eslint/indent': 0,
     'react-hooks/rules-of-hooks': 2,
+    'react-hooks/exhaustive-deps': ['warn', {additionalHooks: '(useMemoOne)'}],
     'react/jsx-props-no-spreading': 0,
     camelcase: 2,
     'prefer-destructuring': 2,
