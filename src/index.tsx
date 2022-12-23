@@ -1,14 +1,23 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// eslint-disable-next-line import-helpers/order-imports
+import ReactDOM from 'react-dom/client';
+
+import './index.css';
+import {createBrowserRouter, RouterProvider} from 'react-router-dom';
+
+import reportWebVitals from './reportWebVitals';
+import routersPath from './routes/index';
+
+const routers = createBrowserRouter(routersPath);
+
+const root = ReactDOM.createRoot(
+  document.getElementById('root') as HTMLElement,
+);
 root.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <RouterProvider router={routers} />
+  </React.StrictMode>,
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -15,36 +14,36 @@
     "resolveJsonModule": true,
     "isolatedModules": false,
     "noEmit": true,
-    "jsx": "react-jsx"
-  },
-  // ? Babel Plugin Module Resolver
-  "baseUrl": "./src",
-  "paths": {
-    "@shared-components/*": ["./shared/components/*"],
-    "@shared-constants": ["./shared/constants"],
-    "@api": ["./services/api/index"],
-    "@theme/*": ["./shared/theme/*"],
-    "@localization": ["./shared/localization"],
-    "@services/*": ["./services/*"],
-    "@screens/*": ["./screens/*"],
-    "@screens": ["./screens/"],
-    "@shared": ["./shared/"],
-    "@shared/*": ["./shared/*"],
-    "@assets": ["./assets/"],
-    "@assets/*": ["./assets/*"],
-    "@icons": ["./assets/icons/"],
-    "@icons/*": ["./assets/icons/*"],
-    "@hooks": ["./shared/hooks/"],
-    "@hooks/*": ["./shared/hooks/*"],
-    "@test-utils": ["../test-utils.tsx"],
-    "@context": ["./shared/context/"],
-    "@context/*": ["./shared/context/*"],
-    "@utils": ["./shared/utils/"],
-    "@utils/*": ["./shared/utils/*"],
-    "@localization/*": ["./shared/localization/*"],
-    "@envs": ["../envs.ts"],
-    "@routes/*": ["./routes/*"],
-    "@routes/": ["./routes/"]
+    "jsx": "react-jsx",
+    // ? Babel Plugin Module Resolver
+    "baseUrl": "./src",
+    "paths": {
+      "@shared-components/*": ["./shared/components/*"],
+      "@shared-constants": ["./shared/constants"],
+      "@api": ["./services/api/index"],
+      "@theme/*": ["./shared/theme/*"],
+      "@localization": ["./shared/localization"],
+      "@services/*": ["./services/*"],
+      "@screens/*": ["./screens/*"],
+      "@screens": ["./screens/"],
+      "@shared": ["./shared/"],
+      "@shared/*": ["./shared/*"],
+      "@assets": ["./assets/"],
+      "@assets/*": ["./assets/*"],
+      "@icons": ["./assets/icons/"],
+      "@icons/*": ["./assets/icons/*"],
+      "@hooks": ["./shared/hooks/"],
+      "@hooks/*": ["./shared/hooks/*"],
+      "@test-utils": ["../test-utils.tsx"],
+      "@context": ["./shared/context/"],
+      "@context/*": ["./shared/context/*"],
+      "@utils": ["./shared/utils/"],
+      "@utils/*": ["./shared/utils/*"],
+      "@localization/*": ["./shared/localization/*"],
+      "@envs": ["../envs.ts"],
+      "@routes/*": ["./routes/*"],
+      "@routes/": ["./routes/"]
+    }
   },
   "exclude": [
     "node_modules",
