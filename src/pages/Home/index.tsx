@@ -1,5 +1,7 @@
 import React from 'react';
 
+import {Link} from 'react-router-dom';
+
 import logo from './logo.svg';
 import './styles.css';
 
@@ -10,9 +12,7 @@ const Home = () => (
       <p>
         <code>Home</code>
       </p>
-      <a className="App-link" href="/print" rel="noopener noreferrer">
-        Print
-      </a>
+      <Link to="/print">Home</Link>
     </header>
   </div>
 );

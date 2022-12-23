@@ -1,5 +1,7 @@
 import React from 'react';
 
+import {Link} from 'react-router-dom';
+
 import './styles.css';
 
 const Print = () => (
@@ -8,9 +10,7 @@ const Print = () => (
       <p>
         <code>Print</code>
       </p>
-      <a className="App-link" href="/" rel="noopener noreferrer">
-        Home
-      </a>
+      <Link to="/">Home</Link>
     </header>
   </div>
 );
