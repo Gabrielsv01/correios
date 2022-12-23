@@ -1,0 +1,6 @@
+/node_modules
+/coverage
+/correios-build
+**/*.js
+**/*.html
+**/*.json
