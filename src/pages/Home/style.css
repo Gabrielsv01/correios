@@ -1,0 +1,11 @@
+.react-date-picker__calendar--open{
+    inset: 100% auto auto -60px !important;
+}
+
+.react-date-picker__wrapper{
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 5px 24px;
+    width: 100%;
+    background: white;
+}

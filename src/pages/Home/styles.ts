@@ -1,114 +1,63 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import styled from 'styled-components';
+import media from 'theme/media';
+
+export const Title = styled.h1`
+  /* color: #3a3a3a; */
+  color: #fff;
+`;
 
 export const Background = styled.div`
-  background-size: cover;
-  height: 100vh;
-  width: 100vw;
   display: flex;
-`;
-
-export const Empty = styled.div`
-  width: 55vw;
-  height: 100vh;
-  display: flex;
-`;
-
-export const CurveContainer = styled.div`
-  height: 100vh;
-  width: 45vw;
-`;
-
-export const Curve = styled.div`
-  height: 100%;
-  width: 100%;
-  background-size: cover;
   flex-direction: column;
-  display: flex;
-  align-items: flex-end;
-`;
-
-export const Perfil = styled.div`
-  display: flex;
   align-items: center;
-  flex-direction: column;
-  padding: 0;
-  width: 50%;
-  #MyPicture {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    margin-top: 25%;
-  }
-  h1 {
-    font-family: 'Open Sans', sans-serif;
-    color: #707070;
-    font-size: 33px;
-    margin-bottom: 0;
-    margin-top: 13px;
-  }
-  #Nickname {
-    font-family: 'Open Sans', sans-serif;
-    color: #707070;
-    font-size: 20px;
-    margin-top: 8px;
-  }
+  justify-content: center;
+  padding: 40px;
 `;
 
-export const SocialNetworking = styled.div`
-  display: flex;
-  #Instagram {
-    margin-left: 8px;
-    width: 25px;
-  }
-  #GitHub {
-    margin-right: 8px;
-    width: 25px;
-  }
-`;
-
-export const ProjectButton = styled.button`
-  background-color: #0e62d4;
-  font-size: 1em;
-  margin: 1em;
-  padding: 0.25em 1em;
-  border: 2px solid #707070;
-  border-radius: 25px;
-  width: 170px;
-  height: 40px;
-  #Work {
-    font-family: 'Open Sans', sans-serif;
-    color: #ffff;
-    font-size: 20px;
-    margin-top: 0;
-    text-decoration: none;
-  }
-`;
-
-export const Phaser = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+export const Card = styled.div`
+  margin-bottom: 20px;
+  background: #016098;
+  border-radius: 8px;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
+  padding: 20px 20px 35px;
   width: 400px;
-  height: 300px;
-  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  ${media.mobile`
+  width: 100%;
+  `}
+`;
 
-  #Phaser {
-    color: #000000;
-    font-family: 'Dancing Script', cursive;
-    line-height: 30px;
-    font-size: 22px;
-    padding-left: 20px;
-    margin-bottom: 0;
-    margin-top: 10px;
+export const Input = styled.input`
+  border-width: 3px;
+  border-radius: 5px;
+  height: 40px;
+  padding: 0 24px;
+  width: 70%;
+  margin-top: 20px;
+  color: 'red';
+`;
+
+export const Button = styled.button`
+  width: 300px;
+  height: 50px;
+  background: #016098;
+  border-radius: 5px;
+  border: 0;
+  color: #fff;
+  font-weight: bold;
+  margin: 10px;
+  transition: background-color 0.2s;
+  font-size: 20px;
+  &:hover {
+    background: #064875;
   }
-  #Author {
-    color: #707070;
-    font-family: 'Dancing Script', cursive;
-    line-height: 30px;
-    font-size: 22px;
-    padding-left: 20px;
-    margin-top: 0;
-    margin-right: 20px;
-  }
+`;
+
+export const SubTitle = styled.h2`
+  margin-top: 10px;
+  /* color: #3a3a3a; */
+  color: #fff;
 `;

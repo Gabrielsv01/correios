@@ -12,6 +12,7 @@
     "@types/react-dom": "^18.0.10",
     "gh-pages": "^4.0.0",
     "react": "^18.2.0",
+    "react-date-picker": "^9.1.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.6.1",
     "react-scripts": "5.0.1",
