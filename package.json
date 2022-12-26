@@ -23,7 +23,7 @@
     "start": "react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d ./correios-build",
-    "build": "BUILD_PATH='./correios-build' react-scripts build && git submodule update --remote",
+    "build": "BUILD_PATH='./correios-build' react-scripts build && git submodule update --remote && cd correios-build && git checkout main && cd ..",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "commit": "git-cz"
