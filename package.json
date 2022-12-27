@@ -23,7 +23,9 @@
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d ./correios-build && cd correios-build && git add . && git commit -m 'deploy' && git push origin main && cd .. && npm run updateSubmodule",
+    "deploy": "npm run preparingBuild && gh-pages -d ./correios-build && npm run addSubmoduleFiles",
+    "preparingBuild":"cd correios-build && git rm -r * && git commit -m 'clean' && git push origin main && cd ..",
+    "addSubmoduleFiles": "cd correios-build && git add . && git commit -m 'deploy' && git push origin main && cd .. && npm run updateSubmodule",
     "updateSubmodule": "git add correios-build && git commit -m 'update submodule' && git push origin main",
     "build": "BUILD_PATH='./correios-build' react-scripts build && git submodule update --remote && cd correios-build && git checkout main && cd ..",
     "test": "react-scripts test",
