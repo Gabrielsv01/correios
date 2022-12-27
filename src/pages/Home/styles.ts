@@ -2,12 +2,14 @@
 import styled from 'styled-components';
 import media from 'theme/media';
 
+// eslint-disable-next-line import-helpers/order-imports
+import InputMask from 'react-input-mask';
+
 export const Title = styled.h1`
-  /* color: #3a3a3a; */
   color: #fff;
 `;
 
-export const Background = styled.div`
+export const Background = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,11 +28,21 @@ export const Card = styled.div`
   flex-direction: column;
   align-items: center;
   ${media.mobile`
-  width: 100%;
+  width: 80%;
   `}
 `;
 
 export const Input = styled.input`
+  border-width: 3px;
+  border-radius: 5px;
+  height: 40px;
+  padding: 0 24px;
+  width: 70%;
+  margin-top: 20px;
+  color: 'red';
+`;
+
+export const InputCustom = styled(InputMask)`
   border-width: 3px;
   border-radius: 5px;
   height: 40px;
@@ -58,6 +70,5 @@ export const Button = styled.button`
 
 export const SubTitle = styled.h2`
   margin-top: 10px;
-  /* color: #3a3a3a; */
   color: #fff;
 `;

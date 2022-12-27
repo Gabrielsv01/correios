@@ -14,6 +14,12 @@ const media = {
       ${css(...args)};
     }
   `,
+
+  print: (...args) => css`
+    @media print {
+      ${css(...args)};
+    }
+  `,
 };
 
 export default media;
