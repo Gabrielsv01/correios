@@ -4,10 +4,9 @@ import {useLocation, useNavigate} from 'react-router-dom';
 
 import * as S from './styles';
 
-const Print = () => {
+const Print: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  console.log(location.state.order);
   return (
     <S.Container>
       <S.Title>Autorização</S.Title>
@@ -23,7 +22,7 @@ const Print = () => {
         {location.state.userRemoverOrder.locate}, {location.state.date.day} de{' '}
         {location.state.date.month} de {location.state.date.year}
       </S.Locate>
-      <S.Line>__________________________________________</S.Line>
+      <S.Line>__________________________________</S.Line>
       <S.TextLineWrapper>
         <S.TextLine>Nome: {location.state.userSubmitted.name}</S.TextLine>
         <S.TextLine>RG: {location.state.userSubmitted.rg}</S.TextLine>
@@ -32,7 +31,7 @@ const Print = () => {
 
       <S.Button
         onClick={() => {
-          navigate(-1);
+          navigate('/', {state: location.state});
         }}>
         Voltar
       </S.Button>

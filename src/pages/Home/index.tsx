@@ -1,15 +1,16 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 import DatePicker from 'react-date-picker';
-import {useNavigate} from 'react-router-dom';
+import {useLocation, useNavigate} from 'react-router-dom';
 
 import './style.css';
 import {OrderProps} from './types';
 
 import * as S from './styles';
 
-const Home = () => {
+const Home: React.FC = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [startDate, setStartDate] = useState<Date>();
   const [order, setOrder] = useState<OrderProps>({code: '', sender: ''});
   const [userSubmittedCPF, setUserSubmittedCPF] = useState<string>('');
@@ -48,6 +49,21 @@ const Home = () => {
 
     navigate('/print', {state: dataPrint});
   };
+
+  useEffect(() => {
+    if (location.state) {
+      const data = location.state;
+      setOrder(data.order);
+      setUserSubmittedCPF(data.userSubmitted.cpf);
+      setUserSubmittedRG(data.userSubmitted.rg);
+      setUserSubmittedName(data.userSubmitted.name);
+      setUserRemoverOrder(data.userRemoverOrder);
+      setUserRemoverOrderCPF(data.userRemoverOrder.cpf);
+      setUserRemoverOrderRG(data.userRemoverOrder.rg);
+      setStartDate(new Date());
+    }
+  }, []);
+
   return (
     <S.Background onSubmit={handleSubmit}>
       <S.Card>
@@ -56,6 +72,7 @@ const Home = () => {
           required
           type="text"
           placeholder="Codigo de rastreio"
+          value={order.code}
           onChange={value => {
             order.code = value.target.value;
             setOrder(order);
@@ -65,6 +82,7 @@ const Home = () => {
           type="text"
           required
           placeholder="Quem enviou?"
+          value={order.sender}
           onChange={value => {
             order.sender = value.target.value;
             setOrder(order);
@@ -77,6 +95,7 @@ const Home = () => {
           type="text"
           required
           placeholder="Nome"
+          value={userRemoverOrder.name}
           onChange={value => {
             userRemoverOrder.name = value.target.value;
             setUserRemoverOrder(userRemoverOrder);
@@ -94,7 +113,7 @@ const Home = () => {
           type="text"
           required
           placeholder="RG"
-          mask="99.999.999-9"
+          mask="9.999.999-9"
           value={userRemoverOrderRG}
           onChange={value => setUserRemoverOrderRG(value.target.value)}
         />
@@ -102,6 +121,7 @@ const Home = () => {
           type="text"
           required
           placeholder="Local de retirada"
+          value={userRemoverOrder.locate}
           onChange={value => {
             userRemoverOrder.locate = value.target.value;
             setUserRemoverOrder(userRemoverOrder);
@@ -116,12 +136,13 @@ const Home = () => {
           type="text"
           required
           placeholder="Nome"
+          value={userSubmittedName}
           onChange={value => setUserSubmittedName(value.target.value)}
         />
         <S.InputCustom
           type="text"
           required
-          mask="99.999.999-99"
+          mask="999.999.999-99"
           placeholder="CPF"
           value={userSubmittedCPF}
           onChange={value => setUserSubmittedCPF(value.target.value)}
@@ -130,7 +151,7 @@ const Home = () => {
           type="text"
           required
           placeholder="RG"
-          mask="99.999.999-9"
+          mask="9.999.999-9"
           value={userSubmittedRG}
           onChange={value => setUserSubmittedRG(value.target.value)}
         />
