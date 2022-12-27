@@ -12,7 +12,7 @@ export const Background = styled.form`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: ${theme.spacing.xxlarge}px;
+  padding: ${theme.spacing.xlarge}px ${theme.spacing.xxsmall}px;
 `;
 
 export const Card = styled.div`
