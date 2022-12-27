@@ -11,31 +11,34 @@ const Home: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [startDate, setStartDate] = useState<Date>();
-  const [order, setOrder] = useState<OrderProps>({code: '', sender: ''});
+  const [code, setCode] = useState('');
+  const [sender, setSender] = useState('');
   const [userSubmittedCPF, setUserSubmittedCPF] = useState<string>('');
   const [userSubmittedRG, setUserSubmittedRG] = useState<string>('');
   const [userSubmittedName, setUserSubmittedName] = useState<string>('');
 
   const [userRemoverOrderCPF, setUserRemoverOrderCPF] = useState<string>('');
   const [userRemoverOrderRG, setUserRemoverOrderRG] = useState<string>('');
-  const [userRemoverOrder, setUserRemoverOrder] = useState({
-    name: '',
-    locate: '',
-  });
+  const [userRemoverOrderLocate, setUserRemoverOrderLocate] =
+    useState<string>('');
+  const [userRemoverOrderName, setUserRemoverOrderName] = useState('');
 
   const handleSubmit = (e: {preventDefault: () => void}) => {
     e.preventDefault();
 
     const dataPrint = {
-      order,
+      order: {
+        code,
+        sender,
+      },
       userSubmitted: {
         name: userSubmittedName.toLocaleUpperCase(),
         cpf: userSubmittedCPF,
         rg: userSubmittedRG,
       },
       userRemoverOrder: {
-        name: userRemoverOrder.name.toLocaleUpperCase(),
-        locate: userRemoverOrder.locate,
+        name: userRemoverOrderName.toLocaleUpperCase(),
+        locate: userRemoverOrderLocate,
         cpf: userRemoverOrderCPF,
         rg: userRemoverOrderRG,
       },
@@ -53,11 +56,13 @@ const Home: React.FC = () => {
   useEffect(() => {
     if (location.state) {
       const data = location.state;
-      setOrder(data.order);
+      setCode(data.order.code);
+      setSender(data.order.sender);
       setUserSubmittedCPF(data.userSubmitted.cpf);
       setUserSubmittedRG(data.userSubmitted.rg);
       setUserSubmittedName(data.userSubmitted.name);
-      setUserRemoverOrder(data.userRemoverOrder);
+      setUserRemoverOrderName(data.userRemoverOrder.name);
+      setUserRemoverOrderLocate(data.userRemoverOrder.locate);
       setUserRemoverOrderCPF(data.userRemoverOrder.cpf);
       setUserRemoverOrderRG(data.userRemoverOrder.rg);
       setStartDate(new Date());
@@ -68,25 +73,21 @@ const Home: React.FC = () => {
     <S.Background onSubmit={handleSubmit}>
       <S.Card>
         <S.Title>Encomenda</S.Title>
-        <S.Input
+        <S.InputCustom
           required
           type="text"
+          mask=""
           placeholder="Codigo de rastreio"
-          value={order.code}
-          onChange={value => {
-            order.code = value.target.value;
-            setOrder(order);
-          }}
+          value={code}
+          onChange={value => setCode(value.target.value)}
         />
-        <S.Input
+        <S.InputCustom
           type="text"
           required
+          mask=""
           placeholder="Quem enviou?"
-          value={order.sender}
-          onChange={value => {
-            order.sender = value.target.value;
-            setOrder(order);
-          }}
+          value={sender}
+          onChange={value => setSender(value.target.value)}
         />
       </S.Card>
       <S.Card>
@@ -95,11 +96,8 @@ const Home: React.FC = () => {
           type="text"
           required
           placeholder="Nome"
-          value={userRemoverOrder.name}
-          onChange={value => {
-            userRemoverOrder.name = value.target.value;
-            setUserRemoverOrder(userRemoverOrder);
-          }}
+          value={userRemoverOrderName}
+          onChange={value => setUserRemoverOrderName(value.target.value)}
         />
         <S.InputCustom
           type="text"
@@ -117,26 +115,25 @@ const Home: React.FC = () => {
           value={userRemoverOrderRG}
           onChange={value => setUserRemoverOrderRG(value.target.value)}
         />
-        <S.Input
+        <S.InputCustom
           type="text"
           required
+          mask=""
           placeholder="Local de retirada"
-          value={userRemoverOrder.locate}
-          onChange={value => {
-            userRemoverOrder.locate = value.target.value;
-            setUserRemoverOrder(userRemoverOrder);
-          }}
+          value={userRemoverOrderLocate}
+          onChange={value => setUserRemoverOrderLocate(value.target.value)}
         />
         <S.SubTitle>Quando?</S.SubTitle>
         <DatePicker required onChange={setStartDate} value={startDate} />
       </S.Card>
       <S.Card>
         <S.Title>Para quem foi enviado?</S.Title>
-        <S.Input
+        <S.InputCustom
           type="text"
           required
+          mask=""
           placeholder="Nome"
-          value={userSubmittedName}
+          value={userSubmittedName === '' ? undefined : userSubmittedName}
           onChange={value => setUserSubmittedName(value.target.value)}
         />
         <S.InputCustom
