@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #FED500;
+  background-color: #fed500;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -15,9 +15,22 @@ code {
 }
 
 * {
-  padding:0;
-  margin:0;
-  vertical-align:baseline;
-  list-style:none;
-  border:0
-  }
+  padding: 0;
+  margin: 0;
+  vertical-align: baseline;
+  list-style: none;
+  border: 0;
+}
+
+/* Data Picker */
+.react-date-picker__calendar--open {
+  inset: 100% auto auto -60px !important;
+}
+
+.react-date-picker__wrapper {
+  margin-top: 10px;
+  border-radius: 5px;
+  padding: 5px 24px;
+  width: 100%;
+  background: white;
+}

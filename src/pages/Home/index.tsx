@@ -3,7 +3,6 @@ import React, {useEffect, useState} from 'react';
 import DatePicker from 'react-date-picker';
 import {useLocation, useNavigate} from 'react-router-dom';
 
-import './style.css';
 import {OrderProps} from './types';
 
 import * as S from './styles';
@@ -23,6 +22,7 @@ const Home: React.FC = () => {
     name: '',
     locate: '',
   });
+
   const handleSubmit = (e: {preventDefault: () => void}) => {
     e.preventDefault();
 
@@ -62,7 +62,7 @@ const Home: React.FC = () => {
       setUserRemoverOrderRG(data.userRemoverOrder.rg);
       setStartDate(new Date());
     }
-  }, []);
+  }, [location.state]);
 
   return (
     <S.Background onSubmit={handleSubmit}>

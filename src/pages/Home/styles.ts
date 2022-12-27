@@ -1,12 +1,10 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
+import InputMask from 'react-input-mask';
 import styled from 'styled-components';
 import media from 'theme/media';
-
-// eslint-disable-next-line import-helpers/order-imports
-import InputMask from 'react-input-mask';
+import {theme} from 'theme/variables';
 
 export const Title = styled.h1`
-  color: #fff;
+  color: ${theme.colors.white};
 `;
 
 export const Background = styled.form`
@@ -14,15 +12,15 @@ export const Background = styled.form`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px;
+  padding: ${theme.spacing.xxlarge}px;
 `;
 
 export const Card = styled.div`
-  margin-bottom: 20px;
-  background: #016098;
-  border-radius: 8px;
-  box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
-  padding: 20px 20px 35px;
+  margin-bottom: ${theme.spacing.medium}px;
+  background: ${theme.colors.secunday};
+  border-radius: ${theme.border.radius.small}px;
+  padding: ${theme.spacing.medium}px ${theme.spacing.medium}px
+    ${theme.spacing.large}px;
   width: 400px;
   display: flex;
   flex-direction: column;
@@ -33,42 +31,39 @@ export const Card = styled.div`
 `;
 
 export const Input = styled.input`
-  border-width: 3px;
-  border-radius: 5px;
+  border-width: ${theme.border.width.large}px;
+  border-radius: ${theme.border.radius.xsmall}px;
   height: 40px;
-  padding: 0 24px;
+  padding: ${theme.spacing.zero} ${theme.spacing.large}px;
   width: 70%;
-  margin-top: 20px;
-  color: 'red';
+  margin-top: ${theme.spacing.medium}px;
 `;
 
 export const InputCustom = styled(InputMask)`
-  border-width: 3px;
-  border-radius: 5px;
+  border-width: ${theme.border.width.large}px;
+  border-radius: ${theme.border.radius.xsmall}px;
   height: 40px;
-  padding: 0 24px;
+  padding: ${theme.spacing.zero} ${theme.spacing.large}px;
   width: 70%;
-  margin-top: 20px;
-  color: 'red';
+  margin-top: ${theme.spacing.medium}px;
 `;
 
 export const Button = styled.button`
   width: 300px;
   height: 50px;
-  background: #016098;
-  border-radius: 5px;
-  border: 0;
-  color: #fff;
-  font-weight: bold;
-  margin: 10px;
+  background: ${theme.colors.secunday};
+  border-radius: ${theme.border.radius.xsmall}px;
+  color: ${theme.colors.white};
+  font-weight: ${theme.fontWeight.bold};
+  margin: ${theme.spacing.xsmall}px;
   transition: background-color 0.2s;
-  font-size: 20px;
+  font-size: ${theme.fontSize.large}px;
   &:hover {
-    background: #064875;
+    background: ${theme.colors.secundayDark};
   }
 `;
 
 export const SubTitle = styled.h2`
-  margin-top: 10px;
-  color: #fff;
+  margin-top: ${theme.spacing.xsmall}px;
+  color: ${theme.colors.white};
 `;
