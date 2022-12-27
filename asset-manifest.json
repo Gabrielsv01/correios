@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/correios-build/static/css/main.be747805.css",
-    "main.js": "/correios-build/static/js/main.0572a033.js",
+    "main.css": "/correios-build/static/css/main.893d3cb3.css",
+    "main.js": "/correios-build/static/js/main.74249194.js",
     "index.html": "/correios-build/index.html",
-    "main.be747805.css.map": "/correios-build/static/css/main.be747805.css.map",
-    "main.0572a033.js.map": "/correios-build/static/js/main.0572a033.js.map"
+    "main.893d3cb3.css.map": "/correios-build/static/css/main.893d3cb3.css.map",
+    "main.74249194.js.map": "/correios-build/static/js/main.74249194.js.map"
   },
   "entrypoints": [
-    "static/css/main.be747805.css",
-    "static/js/main.0572a033.js"
+    "static/css/main.893d3cb3.css",
+    "static/js/main.74249194.js"
   ]
 }
