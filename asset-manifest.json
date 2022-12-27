@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/correios-build/static/css/main.9b2422b7.css",
-    "main.js": "/correios-build/static/js/main.cda726c5.js",
+    "main.js": "/correios-build/static/js/main.f64eba98.js",
     "index.html": "/correios-build/index.html",
     "main.9b2422b7.css.map": "/correios-build/static/css/main.9b2422b7.css.map",
-    "main.cda726c5.js.map": "/correios-build/static/js/main.cda726c5.js.map"
+    "main.f64eba98.js.map": "/correios-build/static/js/main.f64eba98.js.map"
   },
   "entrypoints": [
     "static/css/main.9b2422b7.css",
-    "static/js/main.cda726c5.js"
+    "static/js/main.f64eba98.js"
   ]
 }
