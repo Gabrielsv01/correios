@@ -2,7 +2,7 @@ import React from 'react';
 
 import {Link} from 'react-router-dom';
 
-const NoMatch = () => (
+const NoMatch: React.FC = () => (
   <div>
     <h2>Nothing to see here!</h2>
     <p>

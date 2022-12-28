@@ -6,6 +6,7 @@ const theme: Theme = {
     secunday: '#016098',
     secundayDark: '#064875',
     white: '#fff',
+    black: '#000',
     red: 'red',
   },
   border: {

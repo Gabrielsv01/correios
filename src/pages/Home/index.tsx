@@ -1,9 +1,8 @@
 import React, {useEffect, useState} from 'react';
 
+import logo from 'assets/logo.png';
 import DatePicker from 'react-date-picker';
 import {useLocation, useNavigate} from 'react-router-dom';
-
-import {OrderProps} from './types';
 
 import * as S from './styles';
 
@@ -71,6 +70,9 @@ const Home: React.FC = () => {
 
   return (
     <S.Background onSubmit={handleSubmit}>
+      <S.ImageWrapper>
+        <S.Image src={logo} alt="Logo" />
+      </S.ImageWrapper>
       <S.Card>
         <S.Title>Encomenda</S.Title>
         <S.InputCustom
@@ -92,15 +94,16 @@ const Home: React.FC = () => {
       </S.Card>
       <S.Card>
         <S.Title>Quem vai retirar?</S.Title>
-        <S.Input
+        <S.InputCustom
           type="text"
           required
           placeholder="Nome"
+          mask=""
           value={userRemoverOrderName}
           onChange={value => setUserRemoverOrderName(value.target.value)}
         />
         <S.InputCustom
-          type="text"
+          type="numeric"
           required
           placeholder="CPF"
           mask="999.999.999-99"
@@ -108,7 +111,7 @@ const Home: React.FC = () => {
           onChange={value => setUserRemoverOrderCPF(value.target.value)}
         />
         <S.InputCustom
-          type="text"
+          type="numeric"
           required
           placeholder="RG"
           mask="9.999.999-9"
@@ -137,7 +140,7 @@ const Home: React.FC = () => {
           onChange={value => setUserSubmittedName(value.target.value)}
         />
         <S.InputCustom
-          type="text"
+          type="numeric"
           required
           mask="999.999.999-99"
           placeholder="CPF"
@@ -145,7 +148,7 @@ const Home: React.FC = () => {
           onChange={value => setUserSubmittedCPF(value.target.value)}
         />
         <S.InputCustom
-          type="text"
+          type="numeric"
           required
           placeholder="RG"
           mask="9.999.999-9"

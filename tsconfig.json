@@ -24,7 +24,7 @@
       "@theme/*": ["./shared/theme/*"],
       "@localization": ["./shared/localization"],
       "@services/*": ["./services/*"],
-      "@screens/*": ["./screens/*"],
+      "@pages/*": ["./pages/*"],
       "@shared": ["./shared/"],
       "@shared/*": ["./shared/*"],
       "@assets": ["./assets/"],

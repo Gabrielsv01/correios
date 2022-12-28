@@ -4,6 +4,7 @@ export interface Theme {
     secunday: string;
     secundayDark: string;
     white: string;
+    black: string;
     red: string;
   };
   border: {

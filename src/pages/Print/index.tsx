@@ -22,7 +22,7 @@ const Print: React.FC = () => {
         {location.state.userRemoverOrder.locate}, {location.state.date.day} de{' '}
         {location.state.date.month} de {location.state.date.year}
       </S.Locate>
-      <S.Line>__________________________________</S.Line>
+      <S.Line />
       <S.TextLineWrapper>
         <S.TextLine>Nome: {location.state.userSubmitted.name}</S.TextLine>
         <S.TextLine>RG: {location.state.userSubmitted.rg}</S.TextLine>

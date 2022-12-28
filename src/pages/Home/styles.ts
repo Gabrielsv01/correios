@@ -7,11 +7,28 @@ export const Title = styled.h1`
   color: ${theme.colors.white};
 `;
 
+export const ImageWrapper = styled.div`
+  width: 400px;
+  height: ${theme.spacing.xxxhuge}px;
+  margin-bottom: ${theme.spacing.xlarge}px;
+
+  ${media.mobile`
+    width: 80%;
+  `}
+`;
+
+export const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+`;
+
 export const Background = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: ${theme.colors.primary};
   padding: ${theme.spacing.xlarge}px ${theme.spacing.xxsmall}px;
 `;
 
@@ -28,15 +45,6 @@ export const Card = styled.div`
   ${media.mobile`
   width: 80%;
   `}
-`;
-
-export const Input = styled.input`
-  border-width: ${theme.border.width.large}px;
-  border-radius: ${theme.border.radius.xsmall}px;
-  height: 40px;
-  padding: ${theme.spacing.zero} ${theme.spacing.large}px;
-  width: 70%;
-  margin-top: ${theme.spacing.medium}px;
 `;
 
 export const InputCustom = styled(InputMask)`

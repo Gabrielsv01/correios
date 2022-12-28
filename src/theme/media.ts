@@ -16,6 +16,11 @@ const media = {
   `,
 
   print: (...args) => css`
+    @page {
+      size: auto A4 landscape;
+      margin: 3mm;
+    }
+
     @media print {
       ${css(...args)};
     }
