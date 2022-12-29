@@ -27,7 +27,7 @@ const Home: React.FC = () => {
 
     const dataPrint = {
       order: {
-        code,
+        code: code.toLocaleUpperCase(),
         sender,
       },
       userSubmitted: {
